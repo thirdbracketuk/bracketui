@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwind",
+  "name": "bracketui-turborepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
