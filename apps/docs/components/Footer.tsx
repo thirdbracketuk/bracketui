@@ -10,7 +10,7 @@ export default function AppFooter() {
       </FooterSection>
 
       <FooterSection title="Links">
-        <FooterLink href="http://localhost:3001" isExternal>
+        <FooterLink href="https://bracketui-web.vercel.app/" isExternal>
           Showcase
         </FooterLink>
         <FooterLink href="https://github.com" isExternal>

@@ -29,7 +29,7 @@ export default function Page() {
               <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
                 1. Install the package
               </h3>
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg overflow-x-auto">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
                 <code className="text-green-400">npm install bracketui</code>
               </div>
             </div>
@@ -38,7 +38,7 @@ export default function Page() {
               <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
                 2. Import styles in your layout
               </h3>
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg overflow-x-auto">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
                 <pre className="text-sm text-gray-300">
                   {`// app/layout.tsx
 import 'bracketui/styles.css';
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
               <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
                 3. Start using components
               </h3>
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg overflow-x-auto">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
                 <pre className="text-sm text-gray-300">
                   {`import { Button, Card } from 'bracketui';
 
@@ -98,7 +98,7 @@ export default function Page() {
                 A versatile button component with multiple variants and states.
               </p>
 
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg mb-6">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
                 <pre className="text-sm text-gray-300">
                   {`<Button variant="default" size="md">
   Click me
@@ -141,7 +141,7 @@ export default function Page() {
                 A flexible card component for displaying content.
               </p>
 
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg mb-6">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
                 <pre className="text-sm text-gray-300">
                   {`<Card 
   variant="elevated"
@@ -182,7 +182,7 @@ export default function Page() {
                 A responsive navigation bar with mobile menu support.
               </p>
 
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg mb-6">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
                 <pre className="text-sm text-gray-300">
                   {`<Navbar position="fixed">
   <Navbrand>Brand</Navbrand>
@@ -210,7 +210,7 @@ export default function Page() {
                 A flexible footer component with sections.
               </p>
 
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg mb-6">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
                 <pre className="text-sm text-gray-300">
                   {`<Footer>
   <FooterSection title="Company">
@@ -235,7 +235,7 @@ export default function Page() {
                 Three-way theme toggle (light/dark/system) with SSR support.
               </p>
 
-              <div className="bg-gray-900 dark:bg-gray-950 p-4 rounded-lg mb-6">
+              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
                 <pre className="text-sm text-gray-300">
                   {`// In layout
 <head>
@@ -305,7 +305,7 @@ const [theme, setTheme] = useTheme();`}
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Ready to create amazing interfaces?
           </p>
-          <Button size="lg" as="a" href="http://localhost:3001">
+          <Button size="lg" as="a" href="https://bracketui-web.vercel.app/">
             View Showcase
           </Button>
         </Bracket>

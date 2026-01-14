@@ -15,7 +15,7 @@ export default function Header() {
       <NavItem>
         <Navlink href="#installation">Installation</Navlink>
         <Navlink href="#components">Components</Navlink>
-        <Navlink href="http://localhost:3001" isExternal>
+        <Navlink href="https://bracketui-web.vercel.app/" isExternal>
           Showcase
         </Navlink>
       </NavItem>
@@ -25,7 +25,7 @@ export default function Header() {
           Installation
         </Navlink>
         <Navlink href="#components">Components</Navlink>
-        <Navlink href="http://localhost:3001" isExternal>
+        <Navlink href="https://bracketui-web.vercel.app/" isExternal>
           Showcase
         </Navlink>
       </MobileNav>

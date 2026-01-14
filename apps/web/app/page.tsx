@@ -19,7 +19,7 @@ export default function Page() {
               CSS v4
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" href="http://localhost:3002">
+              <Button size="lg" href="https://bracketui-docs.vercel.app/">
                 Get Started
               </Button>
               <Button size="lg" variant="outline" href="#components">
@@ -37,7 +37,7 @@ export default function Page() {
       </section>
 
       {/* Components Section */}
-      <section id="components" className="py-20 bg-white dark:bg-gray-950">
+      <section id="components" className="py-20 bg-white dark:bg-zinc-950">
         <Bracket>
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
             Components
@@ -120,7 +120,7 @@ export default function Page() {
               Navbar
             </h3>
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
-              <div className="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 px-6 py-4">
+              <div className="bg-white dark:bg-zinc-950 border-b border-gray-200 dark:border-gray-800 px-6 py-4">
                 <div className="flex justify-between items-center">
                   <span className="font-semibold text-gray-900 dark:text-white">
                     Brand
@@ -150,7 +150,7 @@ export default function Page() {
               Footer
             </h3>
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
-              <div className="bg-white dark:bg-gray-950 px-6 py-8">
+              <div className="bg-white dark:bg-zinc-950 px-6 py-8">
                 <div className="grid grid-cols-3 gap-8">
                   <div>
                     <h4 className="text-sm font-semibold mb-3 text-gray-900 dark:text-white">
@@ -198,7 +198,7 @@ export default function Page() {
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
             Install BracketUI and start building beautiful interfaces today
           </p>
-          <Button size="lg" as="a" href="http://localhost:3002">
+          <Button size="lg" as="a" href="https://bracketui-docs.vercel.app/">
             View Documentation
           </Button>
         </Bracket>

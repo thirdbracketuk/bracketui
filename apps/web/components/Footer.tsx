@@ -5,7 +5,9 @@ export default function AppFooter() {
   return (
     <Footer>
       <FooterSection title="BracketUI">
-        <FooterLink href="http://localhost:3002">Documentation</FooterLink>
+        <FooterLink href="https://bracketui-docs.vercel.app/">
+          Documentation
+        </FooterLink>
         <FooterLink href="#components">Components</FooterLink>
       </FooterSection>
 
