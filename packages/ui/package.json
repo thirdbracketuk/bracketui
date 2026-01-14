@@ -8,20 +8,29 @@
     "dist"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
-    "./*": "./dist/*.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "build": "pnpm build:styles && tsup src/index.tsx --format esm,cjs --dts --external react",
     "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
-    "build:components": "tsc",
-    "check-types": "tsc --noEmit",
+    "dev": "pnpm dev:styles & tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
-    "dev:components": "tsc --watch",
-    "lint": "eslint src --max-warnings 0"
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src --max-warnings 0",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "peerDependencies": {
-    "react": "^19"
+    "react": "^19",
+    "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
     "@bracketui/eslint-config": "workspace:*",
@@ -31,6 +40,12 @@
     "@types/react": "^19.1.0",
     "eslint": "^9.39.1",
     "tailwindcss": "^4.1.5",
+    "tsup": "^8.0.2",
     "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwind-variants": "^3.2.2"
   }
 }

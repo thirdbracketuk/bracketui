@@ -1,58 +1,166 @@
-# Turborepo Tailwind CSS starter
+# BracketUI Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern React component library built with Tailwind CSS v4, featuring a complete showcase website and documentation.
 
-## Using this example
+## 📦 Packages
 
-Run the following command:
+### `packages/ui` - BracketUI Component Library
+Modern, lightweight React component library with:
+- 7+ components (Button, Card, Navbar, Footer, Layout, ThemeToggle, Gradient)
+- Full TypeScript support
+- Tailwind CSS v4 with `ui:` prefix
+- Dark mode with three-way toggle (light/dark/system)
+- SSR-safe with Next.js
+- Tree-shakeable exports
 
-```sh
-npx create-turbo@latest -e with-tailwind
+## 🌐 Apps
+
+### `apps/web` - Showcase Website (Port 3001)
+Professional landing page featuring:
+- Impactful hero section
+- Live component demonstrations
+- All variants and sizes displayed
+- Responsive design
+- Dark mode support
+
+### `apps/docs` - Documentation (Port 3002)
+Complete documentation including:
+- Installation guide for Next.js
+- Component API documentation
+- Code examples with syntax highlighting
+- Usage instructions
+- Features overview
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run showcase website
+cd apps/web
+pnpm dev
+# Visit http://localhost:3001
+
+# Run documentation
+cd apps/docs
+pnpm dev
+# Visit http://localhost:3002
+
+# Build component library
+cd packages/ui
+pnpm build
 ```
 
-## What's inside?
+## 🎯 Features
 
-This Turborepo includes the following packages/apps:
+- ✅ **TypeScript** - Full type safety
+- ✅ **Tailwind CSS v4** - Latest Tailwind with custom prefix
+- ✅ **Dark Mode** - System-aware theme switching
+- ✅ **Accessible** - ARIA compliant components
+- ✅ **SSR Ready** - Works with Next.js
+- ✅ **Tree-shakeable** - Import only what you need
+- ✅ **Monorepo** - Turborepo for fast builds
 
-### Apps and Packages
+## 📚 Documentation
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Visit the documentation at http://localhost:3002 for:
+- Installation instructions
+- Component API reference
+- Usage examples
+- Best practices
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## 🎨 Components
 
-### Building packages/ui
+- **Button** - 9 variants, 5 sizes, loading states
+- **Card** - 6 variants, 4 sizes, images, categories
+- **Navbar** - Responsive with mobile menu
+- **Footer** - Flexible with sections
+- **Layout (Bracket)** - Responsive container
+- **ThemeToggle** - Three-way theme switcher
+- **Gradient** - Decorative element
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
+## 🛠️ Tech Stack
 
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
+- **React 19** - Latest React
+- **Next.js 16** - App Router
+- **TypeScript** - Type safety
+- **Tailwind CSS v4** - Styling
+- **Turborepo** - Monorepo management
+- **pnpm** - Package manager
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
+## 📖 Usage
 
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
+```tsx
+import { Button, Card, ThemeToggle } from 'bracketui';
+import 'bracketui/styles.css';
 
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
+export default function App() {
+  return (
+    <div>
+      <ThemeToggle />
+      <Button variant="default">Click me</Button>
+      <Card title="Hello" description="World" />
+    </div>
+  );
+}
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+## 🔧 Development
 
-### Utilities
+```bash
+# Install dependencies
+pnpm install
 
-This Turborepo has some additional tools already setup for you:
+# Build all packages
+pnpm build
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+# Run all apps in dev mode
+pnpm dev
+
+# Lint all packages
+pnpm lint
+
+# Type check
+pnpm check-types
+```
+
+## 📁 Project Structure
+
+```
+bracketui/
+├── packages/
+│   └── ui/                 # Component library
+│       ├── src/
+│       │   ├── components/ # All components
+│       │   ├── hooks/      # React hooks
+│       │   ├── lib/        # Utilities
+│       │   └── index.tsx   # Main exports
+│       └── dist/           # Built files
+│
+├── apps/
+│   ├── web/               # Showcase (3001)
+│   └── docs/              # Documentation (3002)
+│
+└── turbo.json             # Turborepo config
+```
+
+## 🎨 Design System
+
+- **Colors**: Gray scale with proper contrast
+- **Typography**: Geist font family
+- **Spacing**: Consistent 4px grid
+- **Breakpoints**: Mobile-first responsive
+- **Dark Mode**: System-aware with manual override
+
+## 📄 License
+
+MIT
+
+## 🤝 Contributing
+
+Contributions welcome! Please read the documentation first.
+
+---
+
+Built with ❤️ using React, Next.js, and Tailwind CSS v4
