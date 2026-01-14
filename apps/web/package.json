@@ -11,8 +11,6 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2",
-    "@vercel/blob": "^2.0.0",
     "bracketui": "workspace:*",
     "next": "16.0.10",
     "react": "^19.2.0",
