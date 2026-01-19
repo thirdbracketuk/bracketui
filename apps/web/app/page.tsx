@@ -4,7 +4,7 @@ import { Button, Card, Bracket } from "bracketui";
 
 export default function Page() {
   return (
-    <main>
+    <main className="pt-16">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden border-b border-zinc-500/20">
         <Bracket className="relative z-10 text-center py-20">
