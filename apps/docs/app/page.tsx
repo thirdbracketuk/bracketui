@@ -6,12 +6,10 @@ export default function Page() {
   return (
     <main className="pt-16">
       {/* Hero */}
-      <section className="py-20 bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900">
+      <section className="py-20 ">
         <Bracket className="text-center">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Documentation
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-5xl font-bold mb-6">Documentation</h1>
+          <p className="text-xl max-w-2xl mx-auto">
             Everything you need to get started with BracketUI
           </p>
         </Bracket>
@@ -20,26 +18,26 @@ export default function Page() {
       {/* Installation */}
       <section id="installation" className="py-20">
         <Bracket>
-          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-            Installation
-          </h2>
+          <h2 className="text-3xl font-bold mb-8">Installation</h2>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold mb-4">
                 1. Install the package
               </h3>
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
-                <code className="text-green-400">npm install bracketui</code>
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
+                <code className="text-green-600 dark:text-green-400">
+                  npm install bracketui
+                </code>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold mb-4">
                 2. Import styles in your layout
               </h3>
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`// app/layout.tsx
 import 'bracketui/styles.css';
 import { ThemeScript } from 'bracketui';
@@ -59,11 +57,11 @@ export default function RootLayout({ children }) {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold mb-4">
                 3. Start using components
               </h3>
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`import { Button, Card } from 'bracketui';
 
 export default function Page() {
@@ -82,24 +80,20 @@ export default function Page() {
       </section>
 
       {/* Components Documentation */}
-      <section id="components" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="components" className="py-20">
         <Bracket>
-          <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-white">
-            Components
-          </h2>
+          <h2 className="text-3xl font-bold mb-12">Components</h2>
 
           <div className="space-y-16">
             {/* Button */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Button
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <h3 className="text-2xl font-semibold mb-6">Button</h3>
+              <p className="mb-6">
                 A versatile button component with multiple variants and states.
               </p>
 
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`<Button variant="default" size="md">
   Click me
 </Button>
@@ -116,10 +110,8 @@ export default function Page() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card variant="outline" size="sm">
-                  <p className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">
-                    Props
-                  </p>
-                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold mb-2">Props</p>
+                  <ul className="text-sm space-y-1">
                     <li>
                       • variant: default | secondary | destructive | outline |
                       ghost | link
@@ -134,15 +126,13 @@ export default function Page() {
 
             {/* Card */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Card
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <h3 className="text-2xl font-semibold mb-6">Card</h3>
+              <p className="mb-6">
                 A flexible card component for displaying content.
               </p>
 
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`<Card 
   variant="elevated"
   size="md"
@@ -157,10 +147,8 @@ export default function Page() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card variant="outline" size="sm">
-                  <p className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">
-                    Props
-                  </p>
-                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold mb-2">Props</p>
+                  <ul className="text-sm space-y-1">
                     <li>
                       • variant: default | elevated | flat | glass | outline |
                       ghost
@@ -175,15 +163,13 @@ export default function Page() {
 
             {/* Navbar */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Navbar
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <h3 className="text-2xl font-semibold mb-6">Navbar</h3>
+              <p className="mb-6">
                 A responsive navigation bar with mobile menu support.
               </p>
 
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`<Navbar position="fixed">
   <Navbrand>Brand</Navbrand>
   
@@ -203,15 +189,11 @@ export default function Page() {
 
             {/* Footer */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Footer
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                A flexible footer component with sections.
-              </p>
+              <h3 className="text-2xl font-semibold mb-6">Footer</h3>
+              <p className="mb-6">A flexible footer component with sections.</p>
 
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`<Footer>
   <FooterSection title="Company">
     <FooterLink href="/about">About</FooterLink>
@@ -228,15 +210,13 @@ export default function Page() {
 
             {/* Theme */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Theme System
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <h3 className="text-2xl font-semibold mb-6">Theme System</h3>
+              <p className="mb-6">
                 Three-way theme toggle (light/dark/system) with SSR support.
               </p>
 
-              <div className="bg-gray-900 dark:bg-zinc-950 p-4 rounded-lg mb-6">
-                <pre className="text-sm text-gray-300">
+              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
                   {`// In layout
 <head>
   <ThemeScript />
@@ -257,9 +237,7 @@ const [theme, setTheme] = useTheme();`}
       {/* Features */}
       <section className="py-20">
         <Bracket>
-          <h2 className="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white">
-            Features
-          </h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Features</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card
@@ -297,14 +275,10 @@ const [theme, setTheme] = useTheme();`}
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20">
         <Bracket className="text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-            Start Building
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-            Ready to create amazing interfaces?
-          </p>
+          <h2 className="text-3xl font-bold mb-6">Start Building</h2>
+          <p className="text-lg mb-8">Ready to create amazing interfaces?</p>
           <Button size="lg" as="a" href="https://bracketui-web.vercel.app/">
             View Showcase
           </Button>

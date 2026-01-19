@@ -1,6 +1,6 @@
 import { tv } from "tailwind-variants";
 import { colors, focus } from "../../lib/system/tokens";
-import { iconSizes, sizes } from "../../lib/system/sizes";
+import { iconSizes, controlSizes } from "../../lib/system/sizes";
 
 export const buttonStyles = tv({
   base: [
@@ -16,7 +16,7 @@ export const buttonStyles = tv({
       default: `${colors.primary} ${focus.primary}`,
       secondary: `${colors.secondary} ${focus.primary}`,
       destructive: `${colors.destructive} ui:focus-visible:ring-red-500`,
-      outline: `ui:bg-transparent ${colors.outline} ui:hover:bg-gray-100 ui:dark:hover:bg-gray-800 ${focus.primary}`,
+      outline: `ui:bg-transparent ${colors.outline} ui:hover:bg-muted ${focus.primary}`,
       ghost: `${colors.ghost} ${focus.primary}`,
       link: `${colors.link} ${focus.primary}`,
       flat: `${colors.flat} ${focus.primary}`,
@@ -30,7 +30,7 @@ export const buttonStyles = tv({
     },
 
     size: {
-      ...sizes,
+      ...controlSizes,
     },
 
     iconSize: {

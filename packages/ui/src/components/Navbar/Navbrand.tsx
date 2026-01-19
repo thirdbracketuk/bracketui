@@ -16,7 +16,7 @@ const Navbrand: FC<NavbrandProps> = ({
 }) => {
   if (!logo && !children) {
     throw new Error(
-      "Navbrand requires at least one prop: 'logo' or 'children'."
+      "Navbrand requires at least one prop: 'logo' or 'children'.",
     );
   }
   return (
@@ -24,7 +24,7 @@ const Navbrand: FC<NavbrandProps> = ({
       href={href}
       className={cn(
         "ui:flex ui:items-center ui:gap-2 ui:hover:opacity-85 ui:transition-opacity ui:motion-reduce:transition-none ui:motion-reduce:hover:transform-none ui:duration-300 ui:ease-in-out",
-        className
+        className,
       )}
     >
       {logo &&
@@ -43,7 +43,7 @@ const Navbrand: FC<NavbrandProps> = ({
           <span
             className={cn(
               "ui:self-center ui:whitespace-nowrap",
-              "ui:font-semibold ui:text-gray-950 ui:dark:text-white"
+              "ui:font-semibold ui:text-foreground",
             )}
           >
             {children}

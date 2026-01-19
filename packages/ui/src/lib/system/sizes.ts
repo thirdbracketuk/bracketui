@@ -1,4 +1,4 @@
-export const sizes = {
+export const controlSizes = {
   xs: "ui:h-8 ui:px-3 ui:text-xs",
   sm: "ui:h-10 ui:px-4 ui:text-sm",
   md: "ui:h-12 ui:px-5 ui:text-base",

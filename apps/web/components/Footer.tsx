@@ -1,9 +1,20 @@
 "use client";
-import { Footer, FooterSection, FooterLink, FooterBottom } from "bracketui";
+import {
+  Footer,
+  FooterSection,
+  FooterLink,
+  FooterBottom,
+  ThemeToggle,
+} from "bracketui";
 
 export default function AppFooter() {
   return (
-    <Footer>
+    <Footer
+      theme={{
+        background: "bg-background",
+        border: "border-transparent",
+      }}
+    >
       <FooterSection title="BracketUI">
         <FooterLink href="https://bracketui-docs.vercel.app/">
           Documentation
@@ -21,9 +32,10 @@ export default function AppFooter() {
       </FooterSection>
 
       <FooterBottom>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm">
           © 2024 BracketUI. Built with Tailwind CSS v4.
         </p>
+        <ThemeToggle />
       </FooterBottom>
     </Footer>
   );

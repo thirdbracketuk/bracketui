@@ -2,7 +2,7 @@ import "bracketui/styles.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { ThemeScript, RootGradient } from "bracketui";
+import { ThemeScript } from "bracketui";
 import Header from "../components/Header";
 import AppFooter from "../components/Footer";
 
@@ -23,8 +23,8 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className={`${geistMono.className} bg-white dark:bg-gray-950`}>
-        <RootGradient variant="conic" intensity="medium" />
+      <body className={`${geistMono.className} bg-background text-foreground`}>
+        {/* <RootGradient variant="conic" intensity="medium" /> */}
         <Header />
         {children}
         <AppFooter />

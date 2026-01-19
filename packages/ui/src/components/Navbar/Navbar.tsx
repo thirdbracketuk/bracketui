@@ -39,7 +39,7 @@ const Navbar: FC<NavbarProps> = ({
 
   const contextValue = useMemo(
     () => ({ setDesktopNav, setMobileNav, closeMenu }),
-    [closeMenu]
+    [closeMenu],
   );
 
   const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
@@ -75,7 +75,7 @@ const Navbar: FC<NavbarProps> = ({
           position,
           "ui:top-0 ui:left-0 ui:right-0 ui:z-50 ui:backdrop-blur-md",
           themeClasses.background,
-          className
+          className,
         )}
       >
         <div
@@ -89,7 +89,7 @@ const Navbar: FC<NavbarProps> = ({
               </div>
               <button
                 onClick={toggleMenu}
-                className="ui:block ui:md:hidden ui:text-gray-950 ui:dark:text-white"
+                className="ui:block ui:md:hidden ui:text-foreground"
                 aria-label="Toggle Menu"
                 aria-expanded={isOpen}
               >
@@ -105,7 +105,7 @@ const Navbar: FC<NavbarProps> = ({
                     d="M2 8h20"
                     className={cn(
                       "ui:transform ui:transition-transform ui:duration-300 ui:ease-in-out ui:origin-center",
-                      { "ui:rotate-45": isOpen }
+                      { "ui:rotate-45": isOpen },
                     )}
                     strokeWidth="1"
                   />
@@ -113,7 +113,7 @@ const Navbar: FC<NavbarProps> = ({
                     d="M2 16h20"
                     className={cn(
                       "ui:transform ui:transition-transform ui:duration-300 ui:ease-in-out ui:origin-center",
-                      { "ui:-rotate-45": isOpen }
+                      { "ui:-rotate-45": isOpen },
                     )}
                     strokeWidth="2"
                   />
@@ -129,7 +129,7 @@ const Navbar: FC<NavbarProps> = ({
           "ui:fixed ui:inset-0 ui:z-40 ui:md:hidden",
           themeClasses.mobileMenu,
           "ui:transition-transform ui:duration-300 ui:ease-in-out ui:overflow-y-auto",
-          { "ui:translate-y-0": isOpen, "ui:-translate-y-full": !isOpen }
+          { "ui:translate-y-0": isOpen, "ui:-translate-y-full": !isOpen },
         )}
       >
         <div className="ui:flex-1 ui:overflow-auto ui:py-16">{mobileNav}</div>

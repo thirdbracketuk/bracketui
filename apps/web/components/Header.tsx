@@ -4,10 +4,10 @@ import { Navbar, NavItem, MobileNav, Navlink, Navbrand } from "bracketui";
 export default function Header() {
   return (
     <Navbar
-      position="fixed"
       theme={{
-        background: "bg-white/80 dark:bg-black/80",
-        border: "border-gray-200/50 dark:border-gray-800/50",
+        background: "bg-transparentbackdrop-blur-2xl",
+        border: "border-zinc-500/20",
+        mobileMenu: "bg-background",
       }}
     >
       <Navbrand>BracketUI</Navbrand>

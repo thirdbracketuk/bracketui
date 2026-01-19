@@ -1,5 +1,11 @@
 "use client";
-import { Footer, FooterSection, FooterLink, FooterBottom } from "bracketui";
+import {
+  Footer,
+  FooterSection,
+  FooterLink,
+  FooterBottom,
+  ThemeToggle,
+} from "bracketui";
 
 export default function AppFooter() {
   return (
@@ -19,9 +25,8 @@ export default function AppFooter() {
       </FooterSection>
 
       <FooterBottom>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          © 2024 BracketUI Documentation
-        </p>
+        <p className="text-sm">© 2024 BracketUI Documentation</p>
+        <ThemeToggle />
       </FooterBottom>
     </Footer>
   );

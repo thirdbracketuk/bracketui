@@ -29,10 +29,10 @@ const FooterLink = forwardRef<HTMLAnchorElement, FooterLinkProps>(
       },
       ...props
     },
-    ref
+    ref,
   ) {
     const baseStyles =
-      "ui:block ui:mb-3 ui:last:mb-0 ui:transition-all ui:motion-reduce:transition-none ui:motion-reduce:hover:transform-none ui:duration-300 ui:ease-in-out ui:text-sm ui:opacity-65 ui:dark:opacity-50";
+      "ui:block ui:mb-3 ui:last:mb-0 ui:transition-all ui:motion-reduce:transition-none ui:motion-reduce:hover:transform-none ui:duration-300 ui:ease-in-out ui:text-sm ui:opacity-65";
 
     const themeStyles = cn(theme.text, theme.states);
 
@@ -52,7 +52,7 @@ const FooterLink = forwardRef<HTMLAnchorElement, FooterLinkProps>(
         {children}
       </Component>
     );
-  }
+  },
 );
 
 FooterLink.displayName = "FooterLink";

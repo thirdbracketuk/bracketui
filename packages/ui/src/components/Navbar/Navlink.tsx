@@ -33,7 +33,7 @@ const Navlink = forwardRef<HTMLAnchorElement, NavlinkProps>(function Navlink(
     },
     ...props
   },
-  ref
+  ref,
 ) {
   const { closeMenu } = useNavbarContext();
 
@@ -44,9 +44,7 @@ const Navlink = forwardRef<HTMLAnchorElement, NavlinkProps>(function Navlink(
     ? "ui:text-xl ui:font-bold ui:py-3"
     : "ui:text-base ui:md:text-sm ui:font-normal";
 
-  const variantStyles = isDropdownItem
-    ? "ui:opacity-65 ui:dark:opacity-50"
-    : "ui:opacity-75 ui:dark:opacity-60";
+  const variantStyles = isDropdownItem ? "ui:opacity-65" : "ui:opacity-75";
   const themeStyles = cn(theme.text, theme.states);
 
   const linkClass = cn(
@@ -54,7 +52,7 @@ const Navlink = forwardRef<HTMLAnchorElement, NavlinkProps>(function Navlink(
     variantStyles,
     themeStyles,
     varientSize,
-    className
+    className,
   );
 
   const Component = as || "a";

@@ -2,7 +2,7 @@ import "bracketui/styles.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ThemeScript, RootGradient } from "bracketui";
+import { ThemeScript } from "bracketui";
 import Header from "../components/Header";
 import AppFooter from "../components/Footer";
 
@@ -10,7 +10,8 @@ const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "BracketUI - Modern React Component Library",
-  description: "A modern, lightweight React component library built with Tailwind CSS v4",
+  description:
+    "A modern, lightweight React component library built with Tailwind CSS v4",
 };
 
 export default function RootLayout({
@@ -23,8 +24,8 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className={`${geist.className} bg-white dark:bg-black`}>
-        <RootGradient variant="radial" intensity="subtle" />
+      <body className={`${geist.className} bg-background text-foreground`}>
+        {/* <RootGradient variant="radial" intensity="subtle" /> */}
         <Header />
         {children}
         <AppFooter />
