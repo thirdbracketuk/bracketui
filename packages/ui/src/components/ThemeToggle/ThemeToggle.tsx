@@ -18,9 +18,9 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onThemeChange }) => {
   };
 
   return (
-    <div className="ui:relative ui:inline-flex ui:items-center ui:justify-between ui:rounded-full ui:bg-gray-200 ui:dark:bg-gray-800">
+    <div className="ui:relative ui:inline-flex ui:items-center ui:justify-between ui:rounded-full ui:bg-muted ui:border ui:border-border">
       <div
-        className="ui:absolute ui:inset-y-0 ui:left-0 ui:w-1/3 ui:rounded-full ui:border ui:border-gray-200 ui:dark:border-gray-800 ui:bg-white ui:dark:bg-gray-600 ui:transition-all ui:duration-200 ui:ease-in-out"
+        className="ui:absolute ui:inset-y-0 ui:left-0 ui:w-1/3 ui:rounded-full ui:bg-secondary ui:transition-all ui:duration-200 ui:ease-in-out"
         style={{
           transform: `translateX(${themes.indexOf(theme) * 100}%)`,
         }}
@@ -30,12 +30,12 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onThemeChange }) => {
         <button
           key={t}
           onClick={() => handleThemeChange(t)}
-          className="ui:relative ui:z-10 ui:flex ui:items-center ui:justify-center ui:w-7 ui:h-7 ui:md:w-8 ui:md:h-8"
+          className="ui:relative ui:z-10 ui:flex ui:items-center ui:justify-center ui:w-7 ui:h-7 ui:md:w-8 ui:md:h-8 ui:text-muted-fg ui:transition-colors ui:duration-200"
           aria-label={`Use ${t} theme`}
         >
           {t === "light" && (
             <svg
-              className="ui:h-4 ui:w-4 ui:text-gray-700 ui:dark:text-gray-300"
+              className="ui:h-4 ui:w-4"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"
@@ -56,7 +56,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onThemeChange }) => {
           )}
           {t === "dark" && (
             <svg
-              className="ui:h-4 ui:w-4 ui:text-gray-700 ui:dark:text-gray-300"
+              className="ui:h-4 ui:w-4"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"
@@ -69,7 +69,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onThemeChange }) => {
           )}
           {t === "system" && (
             <svg
-              className="ui:h-4 ui:w-4 ui:text-gray-700 ui:dark:text-gray-300"
+              className="ui:h-4 ui:w-4"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"

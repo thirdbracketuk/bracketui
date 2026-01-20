@@ -9,7 +9,7 @@ export default function Page() {
       <section className="py-20 ">
         <Bracket className="text-center">
           <h1 className="text-5xl font-bold mb-6">Documentation</h1>
-          <p className="text-xl max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto text-muted-fg">
             Everything you need to get started with BracketUI
           </p>
         </Bracket>
@@ -25,8 +25,8 @@ export default function Page() {
               <h3 className="text-xl font-semibold mb-4">
                 1. Install the package
               </h3>
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
-                <code className="text-green-600 dark:text-green-400">
+              <div className="bg-muted border border-border p-4 rounded-lg overflow-x-auto max-w-full">
+                <code className="text-primary">
                   npm install bracketui
                 </code>
               </div>
@@ -36,8 +36,8 @@ export default function Page() {
               <h3 className="text-xl font-semibold mb-4">
                 2. Import styles in your layout
               </h3>
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`// app/layout.tsx
 import 'bracketui/styles.css';
 import { ThemeScript } from 'bracketui';
@@ -60,8 +60,8 @@ export default function RootLayout({ children }) {
               <h3 className="text-xl font-semibold mb-4">
                 3. Start using components
               </h3>
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`import { Button, Card } from 'bracketui';
 
 export default function Page() {
@@ -92,8 +92,8 @@ export default function Page() {
                 A versatile button component with multiple variants and states.
               </p>
 
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`<Button variant="default" size="md">
   Click me
 </Button>
@@ -131,8 +131,8 @@ export default function Page() {
                 A flexible card component for displaying content.
               </p>
 
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`<Card 
   variant="elevated"
   size="md"
@@ -168,8 +168,8 @@ export default function Page() {
                 A responsive navigation bar with mobile menu support.
               </p>
 
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`<Navbar position="fixed">
   <Navbrand>Brand</Navbrand>
   
@@ -192,8 +192,8 @@ export default function Page() {
               <h3 className="text-2xl font-semibold mb-6">Footer</h3>
               <p className="mb-6">A flexible footer component with sections.</p>
 
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`<Footer>
   <FooterSection title="Company">
     <FooterLink href="/about">About</FooterLink>
@@ -215,8 +215,8 @@ export default function Page() {
                 Three-way theme toggle (light/dark/system) with SSR support.
               </p>
 
-              <div className="bg-slate-100 dark:bg-zinc-950 p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
-                <pre className="text-sm text-gray-800 dark:text-gray-300 whitespace-pre-wrap wrap-break-word">
+              <div className="bg-muted border border-border p-4 rounded-lg mb-6 overflow-x-auto max-w-full">
+                <pre className="text-sm text-muted-fg whitespace-pre-wrap wrap-break-word">
                   {`// In layout
 <head>
   <ThemeScript />
@@ -278,7 +278,7 @@ const [theme, setTheme] = useTheme();`}
       <section className="py-20">
         <Bracket className="text-center">
           <h2 className="text-3xl font-bold mb-6">Start Building</h2>
-          <p className="text-lg mb-8">Ready to create amazing interfaces?</p>
+          <p className="text-lg mb-8 text-muted-fg">Ready to create amazing interfaces?</p>
           <Button size="lg" as="a" href="https://bracketui-web.vercel.app/">
             View Showcase
           </Button>

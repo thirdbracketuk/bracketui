@@ -4,25 +4,25 @@
 :root {
   /* Semantic Colors (Light Mode Default) */
   --background: var(--color-white);
-  --foreground: var(--color-gray-950);
+  --foreground: var(--color-black);
 
-  --primary: var(--color-gray-950);
+  --primary: var(--color-black);
   --primary-fg: var(--color-white);
 
-  --secondary: var(--color-gray-200);
-  --secondary-fg: var(--color-gray-900);
+  --secondary: var(--color-slate-200); /* Light mode secondary */
+  --secondary-fg: var(--color-zinc-900);
 
   --destructive: var(--color-red-600);
   --destructive-fg: var(--color-white);
 
-  --muted: var(--color-gray-100);
-  --muted-fg: var(--color-gray-900);
+  --muted: var(--color-slate-100); /* Lighter slate for muted elements */
+  --muted-fg: var(--color-zinc-900); /* Darker text for muted elements */
 
-  --border: var(--color-gray-200);
-  --input: var(--color-gray-200);
+  --border: var(--color-slate-200);
+  --input: var(--color-slate-200);
   --ring: var(--color-gray-500);
 
-  --glass: var(--color-slate-50);
+  --glass: var(--color-neutral-50);
   --glass-border: var(--color-slate-200);
 }
 
@@ -30,56 +30,54 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --background: var(--color-gray-950);
-    --foreground: var(--color-gray-50);
+    --background: var(--color-zinc-900); /* Dark background for dark mode */
+    --foreground: var(--color-slate-100); /* Light foreground for text */
 
-    --primary: var(--color-white);
-    --primary-fg: var(--color-black);
+    --primary: var(--color-slate-100); /* Lighter primary color for dark mode */
+    --primary-fg: var(--color-zinc-900); /* Text or icon on primary elements */
 
-    --secondary: var(--color-gray-800);
-    --secondary-fg: var(--color-gray-100);
+    --secondary: var(--color-zinc-800); /* Darker zinc for secondary elements */
+    --secondary-fg: var(
+      --color-slate-200
+    ); /* Lighter slate text for secondary */
 
-    --muted: var(--color-gray-800);
-    --muted-fg: var(--color-gray-50);
+    --muted: var(--color-zinc-700); /* Muted elements with medium zinc */
+    --muted-fg: var(--color-slate-300); /* Light slate for muted text */
 
-    --border: var(--color-gray-800);
-    --input: var(--color-gray-800);
-    --ring: var(--color-gray-300);
+    --border: var(--color-zinc-800); /* Lighter border color for dark mode */
+    --input: var(--color-zinc-700); /* Inputs with dark zinc */
+    --ring: var(--color-slate-400); /* Lighter ring for focus effect */
 
-    --glass: var(--color-neutral-950);
-    --glass-border: var(--color-gray-800);
+    --glass: var(--color-neutral-950); /* Dark glass effect */
+    --glass-border: var(--color-zinc-700); /* Dark border around glass */
   }
 }
 
 /* 2.1 Handle Manual Dark Mode Toggle */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --background: var(--color-gray-950);
-  --foreground: var(--color-gray-50);
+  --background: var(--color-zinc-900); /* Dark background */
+  --foreground: var(--color-slate-100); /* Light foreground for text */
 
-  --primary: var(--color-white);
-  --primary-fg: var(--color-black);
+  --primary: var(--color-slate-100); /* Light primary for dark mode */
+  --primary-fg: var(--color-zinc-900); /* Text or icon on primary elements */
 
-  --secondary: var(--color-gray-800);
-  --secondary-fg: var(--color-gray-100);
+  --secondary: var(--color-zinc-950); /* Very dark secondary for dark mode */
+  --secondary-fg: var(--color-slate-100); /* Light text on secondary elements */
 
-  --muted: var(--color-gray-800);
-  --muted-fg: var(--color-gray-50);
+  --muted: var(--color-zinc-800); /* Muted elements with dark zinc */
+  --muted-fg: var(--color-slate-300); /* Muted text with lighter slate */
 
-  --border: var(--color-gray-800);
-  --input: var(--color-gray-800);
-  --ring: var(--color-gray-300);
+  --border: var(--color-zinc-800); /* Lighter border color */
+  --input: var(--color-zinc-700); /* Inputs with dark zinc */
+  --ring: var(--color-slate-400); /* Light ring for focus effect */
 
-  --glass: var(--color-neutral-950);
-  --glass-border: var(--color-gray-800);
+  --glass: var(--color-neutral-950); /* Dark glass effect */
+  --glass-border: var(--color-zinc-700); /* Dark border around glass */
 }
 
 /* 3. Expose Variables to Tailwind */
 @theme {
-  --color-blue-1000: #2a8af6;
-  --color-purple-1000: #a853ba;
-  --color-red-1000: #e92a67;
-
   /* Map CSS variables to Tailwind colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);

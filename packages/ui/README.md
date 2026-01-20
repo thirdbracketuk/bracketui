@@ -259,6 +259,17 @@ import { Bracket } from 'bracketui';
 - `fluid`: boolean
 - `as`: ElementType
 
+In Tailwind v4 you can opt‑in to container queries on this component. Set
+`containerQuery` to `true` to mark the element as a [container]
+so that responsive modifiers like `@sm:` respond to the element’s width instead of
+the viewport. This is disabled by default and therefore backwards‑compatible.
+
+Additional Prop:
+
+- `containerQuery`: boolean (default: `false`) – when enabled, applies the
+  `ui:container` class to the underlying element so Tailwind v4 container
+  queries apply. This has no effect on existing usage unless explicitly set.
+
 ### Gradient
 
 A decorative gradient component.
@@ -331,6 +342,27 @@ import { ThemeScript } from 'bracketui';
   <ThemeScript />
 </head>
 ```
+
+### Design tokens & sizing utilities
+
+BracketUI exposes its underlying design tokens and sizing presets for advanced
+customisation. You can import these directly from the package and use them in
+your own components or Tailwind variant definitions without digging into
+internal files:
+
+```ts
+import { colors, cardVariants, controlSizes, cardSizes } from 'bracketui';
+
+// colours: semantic colour palettes with `ui:` prefixes
+console.log(colors.primary); // -> "ui:bg-primary ui:text-primary-fg"
+
+// controlSizes: base height/padding classes for buttons and inputs
+console.log(controlSizes.md); // -> "ui:h-12 ui:px-5 ui:text-base"
+```
+
+These exports provide a single source of truth for the design system so your
+own custom components can stay consistent with BracketUI. They are additive
+exports and do not affect existing imports.
 
 ## Tailwind CSS v4 Configuration
 
