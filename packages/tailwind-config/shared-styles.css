@@ -30,7 +30,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --background: var(--color-zinc-900); /* Dark background for dark mode */
+    --background: var(--color-zinc-950); /* Dark background for dark mode */
     --foreground: var(--color-slate-100); /* Light foreground for text */
 
     --primary: var(--color-slate-100); /* Lighter primary color for dark mode */
@@ -56,16 +56,16 @@
 /* 2.1 Handle Manual Dark Mode Toggle */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --background: var(--color-zinc-900); /* Dark background */
+  --background: var(--color-zinc-950); /* Dark background */
   --foreground: var(--color-slate-100); /* Light foreground for text */
 
   --primary: var(--color-slate-100); /* Light primary for dark mode */
   --primary-fg: var(--color-zinc-900); /* Text or icon on primary elements */
 
-  --secondary: var(--color-zinc-950); /* Very dark secondary for dark mode */
-  --secondary-fg: var(--color-slate-100); /* Light text on secondary elements */
+  --secondary: var(--color-zinc-800); /* Very dark secondary for dark mode */
+  --secondary-fg: var(--color-slate-200); /* Light text on secondary elements */
 
-  --muted: var(--color-zinc-800); /* Muted elements with dark zinc */
+  --muted: var(--color-zinc-700); /* Muted elements with dark zinc */
   --muted-fg: var(--color-slate-300); /* Muted text with lighter slate */
 
   --border: var(--color-zinc-800); /* Lighter border color */
