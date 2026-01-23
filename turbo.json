@@ -6,20 +6,20 @@
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET", "BLOB_READ_WRITE_TOKEN"]
     },
     "lint": {
       "dependsOn": ["^lint"],
-      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET", "BLOB_READ_WRITE_TOKEN"]
     },
     "check-types": {
       "dependsOn": ["^check-types"],
-      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET", "BLOB_READ_WRITE_TOKEN"]
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET", "BLOB_READ_WRITE_TOKEN"]
     }
   }
 }
