@@ -11,16 +11,23 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.72.0",
+    "@payloadcms/next": "^3.72.0",
+    "@payloadcms/richtext-lexical": "^3.72.0",
+    "@payloadcms/ui": "^3.72.0",
     "bracketui": "workspace:*",
-    "next": "16.0.10",
+    "graphql": "^16.12.0",
+    "next": "16.1.0",
+    "payload": "^3.72.0",
     "react": "^19.2.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.4.6",
     "@bracketui/eslint-config": "workspace:*",
     "@bracketui/tailwind-config": "workspace:*",
     "@bracketui/typescript-config": "workspace:*",
+    "@next/eslint-plugin-next": "^15.4.6",
     "@tailwindcss/postcss": "^4.1.5",
     "@types/node": "^22.15.30",
     "@types/react": "^19.1.0",

@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import { ThemeScript } from "bracketui";
-import Header from "../components/Header";
-import AppFooter from "../components/Footer";
+import Header from "../../components/Header";
+import AppFooter from "../../components/Footer";
 
 const geistMono = Geist_Mono({ subsets: ["latin"] });
 

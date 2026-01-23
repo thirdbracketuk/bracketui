@@ -5,17 +5,21 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^check-types"],
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["DATABASE_URL", "PAYLOAD_SECRET"]
     }
   }
 }

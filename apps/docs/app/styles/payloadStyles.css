@@ -1,0 +1,277 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+/* @import 'tailwindcss/preflight.css' layer(base); */
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Support Payload’s dark mode toggle by adding a custom variant */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  /* Variables */
+
+  --theme-bg: var(--theme-elevation-0);
+  --theme-input-bg: var(--theme-elevation-0);
+  --theme-text: var(--theme-elevation-900);
+  --theme-border-color: var(--theme-elevation-200);
+  --style-radius-s: var(--style-radius-s);
+  --style-radius-m: var(--style-radius-m);
+  --style-radius-l: var(--style-radius-l);
+
+  --style-radius-s: 0.375rem;
+  --style-radius-m: 0.5rem;
+  --style-radius-l: 1rem;
+
+  --color-base-0: oklch(100% 0 0);
+  --color-base-50: oklch(98.4% 0.003 247.858);
+  --color-base-100: oklch(96.8% 0.007 247.896);
+  --color-base-150: oklch(94.8% 0.01 251.7); /* Adapted intermediate */
+  --color-base-200: oklch(92.9% 0.013 255.508);
+  --color-base-250: oklch(89.9% 0.017 254.2); /* Adapted intermediate */
+  --color-base-300: oklch(86.9% 0.022 252.894);
+  --color-base-350: oklch(78.6% 0.031 254.8); /* Adapted intermediate */
+  --color-base-400: oklch(70.4% 0.04 256.788);
+  --color-base-450: oklch(62.7% 0.033 260.5); /* Adapted intermediate */
+  --color-base-500: oklch(55.1% 0.027 264.364);
+  --color-base-550: oklch(49.6% 0.022 275); /* Adapted intermediate */
+  --color-base-600: oklch(44.2% 0.017 285.786);
+  --color-base-650: oklch(40.6% 0.015 285.8); /* Adapted intermediate */
+  --color-base-700: oklch(37% 0.013 285.805);
+  --color-base-750: oklch(32.2% 0.009 285.9); /* Adapted intermediate */
+  --color-base-800: oklch(27.4% 0.006 286.033);
+  --color-base-850: oklch(24.2% 0.006 285.95); /* Adapted intermediate */
+  --color-base-900: oklch(21% 0.006 285.885);
+  --color-base-950: oklch(14.1% 0.005 285.823);
+  --color-base-1000: oklch(10.5% 0.004 285.823);
+
+  --color-success-50: oklch(96% 0.00833 223.952);
+  --color-success-100: oklch(93% 0.035 220);
+  --color-success-150: oklch(88% 0.06 220);
+  --color-success-200: oklch(84% 0.08 220);
+  --color-success-250: oklch(79.5% 0.1 220);
+  --color-success-300: oklch(75% 0.11 220);
+  --color-success-350: oklch(70% 0.13 220);
+  --color-success-400: oklch(65% 0.135 220);
+  --color-success-450: oklch(59% 0.135 220);
+  --color-success-500: oklch(55% 0.12 220);
+  --color-success-550: oklch(50% 0.115 220);
+  --color-success-600: oklch(47% 0.1 220);
+  --color-success-650: oklch(42% 0.09 220);
+  --color-success-700: oklch(39% 0.08 220);
+  --color-success-750: oklch(35% 0.07 220);
+  --color-success-800: oklch(31% 0.06 220);
+  --color-success-850: oklch(28% 0.05 220);
+  --color-success-900: oklch(24% 0.04 220);
+  --color-success-950: oklch(21% 0.02 220);
+
+  --color-error-50: oklch(96% 0.015 20);
+  --color-error-100: oklch(92% 0.035 20);
+  --color-error-150: oklch(87% 0.055 20);
+  --color-error-200: oklch(83% 0.08 20);
+  --color-error-250: oklch(79% 0.1 20);
+  --color-error-300: oklch(74% 0.125 20);
+  --color-error-350: oklch(69% 0.15 20);
+  --color-error-400: oklch(64% 0.16 20);
+  --color-error-450: oklch(60% 0.175 20);
+  --color-error-500: oklch(56% 0.18 20);
+  --color-error-550: oklch(52% 0.17 20);
+  --color-error-600: oklch(49% 0.165 20);
+  --color-error-650: oklch(45% 0.15 20);
+  --color-error-700: oklch(42% 0.135 20);
+  --color-error-750: oklch(38% 0.115 20);
+  --color-error-800: oklch(35% 0.1 20);
+  --color-error-850: oklch(31% 0.08 20);
+  --color-error-900: oklch(27% 0.06 20);
+  --color-error-950: oklch(22% 0.035 20);
+
+  --color-warning-50: oklch(96% 0.015 65);
+  --color-warning-100: oklch(93% 0.03 65);
+  --color-warning-150: oklch(88% 0.06 65);
+  --color-warning-200: oklch(84% 0.08 65);
+  --color-warning-250: oklch(80% 0.11 65);
+  --color-warning-300: oklch(75% 0.14 65);
+  --color-warning-350: oklch(70% 0.18 65);
+  --color-warning-400: oklch(66% 0.2 65);
+  --color-warning-450: oklch(61% 0.18 65);
+  --color-warning-500: oklch(57% 0.16 65);
+  --color-warning-550: oklch(52% 0.15 65);
+  --color-warning-600: oklch(49% 0.13 65);
+  --color-warning-650: oklch(45% 0.115 65);
+  --color-warning-700: oklch(42% 0.1 65);
+  --color-warning-750: oklch(38% 0.085 65);
+  --color-warning-800: oklch(35% 0.07 65);
+  --color-warning-850: oklch(31% 0.05 65);
+  --color-warning-900: oklch(27% 0.04 65);
+  --color-warning-950: oklch(23% 0.025 65);
+
+  --theme-success-50: var(--color-success-50);
+  --theme-success-100: var(--color-success-100);
+  --theme-success-150: var(--color-success-150);
+  --theme-success-200: var(--color-success-200);
+  --theme-success-250: var(--color-success-250);
+  --theme-success-300: var(--color-success-300);
+  --theme-success-350: var(--color-success-350);
+  --theme-success-400: var(--color-success-400);
+  --theme-success-450: var(--color-success-450);
+  --theme-success-500: var(--color-success-500);
+  --theme-success-550: var(--color-success-550);
+  --theme-success-600: var(--color-success-600);
+  --theme-success-650: var(--color-success-650);
+  --theme-success-700: var(--color-success-700);
+  --theme-success-750: var(--color-success-750);
+  --theme-success-800: var(--color-success-800);
+  --theme-success-850: var(--color-success-850);
+  --theme-success-900: var(--color-success-900);
+  --theme-success-950: var(--color-success-950);
+
+  --theme-warning-50: var(--color-warning-50);
+  --theme-warning-100: var(--color-warning-100);
+  --theme-warning-150: var(--color-warning-150);
+  --theme-warning-200: var(--color-warning-200);
+  --theme-warning-250: var(--color-warning-250);
+  --theme-warning-300: var(--color-warning-300);
+  --theme-warning-350: var(--color-warning-350);
+  --theme-warning-400: var(--color-warning-400);
+  --theme-warning-450: var(--color-warning-450);
+  --theme-warning-500: var(--color-warning-500);
+  --theme-warning-550: var(--color-warning-550);
+  --theme-warning-600: var(--color-warning-600);
+  --theme-warning-650: var(--color-warning-650);
+  --theme-warning-700: var(--color-warning-700);
+  --theme-warning-750: var(--color-warning-750);
+  --theme-warning-800: var(--color-warning-800);
+  --theme-warning-850: var(--color-warning-850);
+  --theme-warning-900: var(--color-warning-900);
+  --theme-warning-950: var(--color-warning-950);
+
+  --theme-error-50: var(--color-error-50);
+  --theme-error-100: var(--color-error-100);
+  --theme-error-150: var(--color-error-150);
+  --theme-error-200: var(--color-error-200);
+  --theme-error-250: var(--color-error-250);
+  --theme-error-300: var(--color-error-300);
+  --theme-error-350: var(--color-error-350);
+  --theme-error-400: var(--color-error-400);
+  --theme-error-450: var(--color-error-450);
+  --theme-error-500: var(--color-error-500);
+  --theme-error-550: var(--color-error-550);
+  --theme-error-600: var(--color-error-600);
+  --theme-error-650: var(--color-error-650);
+  --theme-error-700: var(--color-error-700);
+  --theme-error-750: var(--color-error-750);
+  --theme-error-800: var(--color-error-800);
+  --theme-error-850: var(--color-error-850);
+  --theme-error-900: var(--color-error-900);
+  --theme-error-950: var(--color-error-950);
+
+  --theme-elevation-0: var(--color-base-0);
+  --theme-elevation-50: var(--color-base-50);
+  --theme-elevation-100: var(--color-base-100);
+  --theme-elevation-150: var(--color-base-150);
+  --theme-elevation-200: var(--color-base-200);
+  --theme-elevation-250: var(--color-base-250);
+  --theme-elevation-300: var(--color-base-300);
+  --theme-elevation-350: var(--color-base-350);
+  --theme-elevation-400: var(--color-base-400);
+  --theme-elevation-450: var(--color-base-450);
+  --theme-elevation-500: var(--color-base-500);
+  --theme-elevation-550: var(--color-base-550);
+  --theme-elevation-600: var(--color-base-600);
+  --theme-elevation-650: var(--color-base-650);
+  --theme-elevation-700: var(--color-base-700);
+  --theme-elevation-750: var(--color-base-750);
+  --theme-elevation-800: var(--color-base-800);
+  --theme-elevation-850: var(--color-base-850);
+  --theme-elevation-900: var(--color-base-900);
+  --theme-elevation-950: var(--color-base-950);
+  --theme-elevation-1000: var(--color-base-1000);
+}
+
+html[data-theme="dark"] {
+  /* Variables */
+
+  --theme-bg: var(--theme-elevation-0);
+  --theme-text: var(--theme-elevation-1000);
+  --theme-input-bg: var(--theme-elevation-50);
+  --theme-border-color: var(--theme-elevation-200);
+
+  color-scheme: dark;
+
+  --theme-elevation-0: var(--color-base-1000);
+  --theme-elevation-50: var(--color-base-950);
+  --theme-elevation-100: var(--color-base-900);
+  --theme-elevation-150: var(--color-base-850);
+  --theme-elevation-200: var(--color-base-800);
+  --theme-elevation-250: var(--color-base-750);
+  --theme-elevation-300: var(--color-base-700);
+  --theme-elevation-350: var(--color-base-650);
+  --theme-elevation-400: var(--color-base-600);
+  --theme-elevation-450: var(--color-base-550);
+  --theme-elevation-500: var(--color-base-500);
+  --theme-elevation-550: var(--color-base-450);
+  --theme-elevation-600: var(--color-base-400);
+  --theme-elevation-650: var(--color-base-350);
+  --theme-elevation-700: var(--color-base-300);
+  --theme-elevation-750: var(--color-base-250);
+  --theme-elevation-800: var(--color-base-200);
+  --theme-elevation-850: var(--color-base-150);
+  --theme-elevation-900: var(--color-base-100);
+  --theme-elevation-950: var(--color-base-50);
+  --theme-elevation-1000: var(--color-base-0);
+
+  --theme-success-50: var(--color-success-950);
+  --theme-success-100: var(--color-success-900);
+  --theme-success-150: var(--color-success-850);
+  --theme-success-200: var(--color-success-800);
+  --theme-success-250: var(--color-success-750);
+  --theme-success-300: var(--color-success-700);
+  --theme-success-350: var(--color-success-650);
+  --theme-success-400: var(--color-success-600);
+  --theme-success-450: var(--color-success-550);
+  --theme-success-550: var(--color-success-450);
+  --theme-success-600: var(--color-success-400);
+  --theme-success-650: var(--color-success-350);
+  --theme-success-700: var(--color-success-300);
+  --theme-success-750: var(--color-success-250);
+  --theme-success-800: var(--color-success-200);
+  --theme-success-850: var(--color-success-150);
+  --theme-success-900: var(--color-success-100);
+  --theme-success-950: var(--color-success-50);
+
+  --theme-warning-50: var(--color-warning-950);
+  --theme-warning-100: var(--color-warning-900);
+  --theme-warning-150: var(--color-warning-850);
+  --theme-warning-200: var(--color-warning-800);
+  --theme-warning-250: var(--color-warning-750);
+  --theme-warning-300: var(--color-warning-700);
+  --theme-warning-350: var(--color-warning-650);
+  --theme-warning-400: var(--color-warning-600);
+  --theme-warning-450: var(--color-warning-550);
+  --theme-warning-550: var(--color-warning-450);
+  --theme-warning-600: var(--color-warning-400);
+  --theme-warning-650: var(--color-warning-350);
+  --theme-warning-700: var(--color-warning-300);
+  --theme-warning-750: var(--color-warning-250);
+  --theme-warning-800: var(--color-warning-200);
+  --theme-warning-850: var(--color-warning-150);
+  --theme-warning-900: var(--color-warning-100);
+  --theme-warning-950: var(--color-warning-50);
+
+  --theme-error-50: var(--color-error-950);
+  --theme-error-100: var(--color-error-900);
+  --theme-error-150: var(--color-error-850);
+  --theme-error-200: var(--color-error-800);
+  --theme-error-250: var(--color-error-750);
+  --theme-error-300: var(--color-error-700);
+  --theme-error-350: var(--color-error-650);
+  --theme-error-400: var(--color-error-600);
+  --theme-error-450: var(--color-error-550);
+  --theme-error-550: var(--color-error-450);
+  --theme-error-600: var(--color-error-400);
+  --theme-error-650: var(--color-error-350);
+  --theme-error-700: var(--color-error-300);
+  --theme-error-750: var(--color-error-250);
+  --theme-error-800: var(--color-error-200);
+  --theme-error-850: var(--color-error-150);
+  --theme-error-900: var(--color-error-100);
+  --theme-error-950: var(--color-error-50);
+}
