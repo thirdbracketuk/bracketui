@@ -1,14 +1,41 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+/* @import 'tailwindcss/preflight.css' layer(base); */
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
   /* Variables */
+
+  --base-px: 20;
+  --base-body-size: 14;
+  --base: calc((var(--base-px) / var(--base-body-size)) * 1rem);
   --theme-bg: var(--theme-elevation-0);
   --theme-input-bg: var(--theme-elevation-0);
   --theme-text: var(--theme-elevation-800);
   --theme-overlay: rgba(5, 5, 5, 0.5);
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-body: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --font-serif: var(--font-geist-sans);
 
   --style-radius-s: 4px;
-  --style-radius-m: 8px;
-  --style-radius-l: 16px;
+  --style-radius-m: 6px;
+  --style-radius-l: 8px;
   --nav-width: 275px;
+
+  /* Height: Geist Medium is 40px. 40 / 20 = 2.0 multiplier */
+  --btn-height: calc(2 * var(--base));
+
+  /* Padding-X: Geist uses ~12-16px. 12 / 20 = 0.6 multiplier */
+  --btn-padding-x: calc(0.6 * var(--base));
+
+  /* Border Radius: Geist is ~6-8px. 6 / 20 = 0.3 multiplier */
+  --btn-radius: calc(0.3 * var(--base));
 
   /* Color Shades */
   --color-base-0: oklch(1 0 0);
@@ -33,27 +60,30 @@
   --color-base-950: oklch(0.04 0 0);
   --color-base-1000: oklch(0 0 0);
 
-  --color-accent-0: oklch(0% 0 0);
-  --color-accent-50: oklch(5% 0 0);
-  --color-accent-100: oklch(10% 0 0);
-  --color-accent-150: oklch(15% 0 0);
-  --color-accent-200: oklch(20% 0 0);
-  --color-accent-250: oklch(25% 0 0);
-  --color-accent-300: oklch(30% 0 0);
-  --color-accent-350: oklch(35% 0 0);
-  --color-accent-400: oklch(40% 0 0);
-  --color-accent-450: oklch(45% 0 0);
-  --color-accent-500: oklch(50% 0 0);
-  --color-accent-550: oklch(55% 0 0);
-  --color-accent-600: oklch(60% 0 0);
-  --color-accent-650: oklch(65% 0 0);
-  --color-accent-700: oklch(70% 0 0);
-  --color-accent-750: oklch(75% 0 0);
-  --color-accent-800: oklch(80% 0 0);
-  --color-accent-850: oklch(85% 0 0);
-  --color-accent-900: oklch(90% 0 0);
-  --color-accent-950: oklch(95% 0 0);
-  --color-accent-1000: oklch(100% 0 0);
+  --color-accent-0: oklch(1 0 0);
+  /* Light Shades (Slate Hue) */
+  --color-accent-50: oklch(0.98 0.004 255);
+  --color-accent-100: oklch(0.9305 0.012 255);
+  --color-accent-150: oklch(0.881 0.015 255);
+  --color-accent-200: oklch(0.8315 0.02 255);
+  --color-accent-250: oklch(0.782 0.022 256);
+  --color-accent-300: oklch(0.7325 0.025 258);
+  --color-accent-350: oklch(0.683 0.028 260);
+  /* Mid Tones (The Pivot) */
+  --color-accent-400: oklch(0.6335 0.03 265);
+  --color-accent-450: oklch(0.584 0.028 270);
+  --color-accent-500: oklch(0.5345 0.025 275);
+  --color-accent-550: oklch(0.485 0.022 280);
+  /* Dark Shades (Zinc Hue) */
+  --color-accent-600: oklch(0.4355 0.02 285);
+  --color-accent-650: oklch(0.386 0.018 285);
+  --color-accent-700: oklch(0.3365 0.015 285);
+  --color-accent-750: oklch(0.287 0.012 285);
+  --color-accent-800: oklch(0.2375 0.01 285);
+  --color-accent-850: oklch(0.188 0.008 285);
+  --color-accent-900: oklch(0.1385 0.006 285);
+  --color-accent-950: oklch(0.04 0.003 285);
+  --color-accent-1000: oklch(0 0 0);
 
   /* Theme Accent Colors */
   --theme-accent-0: var(--color-accent-0);
@@ -83,6 +113,8 @@
 .hamburger__wrapper {
   background-color: var(--theme-elevation-100);
   border: 1px solid var(--theme-elevation-200);
+  width: 48px;
+  height: 48px;
 }
 .hamburger:before {
   background-color: var(--theme-elevation-100);
@@ -105,20 +137,20 @@
 
 /* Nav */
 .nav {
-  background-color: var(--theme-elevation-100);
+  background-color: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-150);
 }
 
 /* Dashboard Card */
 .card {
-  background-color: var(--theme-elevation-100);
-  border: 1px solid var(--theme-elevation-200);
+  background-color: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: var(--style-radius-m);
+  font-size: var(--text-base);
 }
 
-/* Primary Button */
-.btn--style-primary {
-  background-color: var(--theme-elevation-100);
-  border: 1px solid var(--theme-elevation-200);
-  color: var(--theme-elevation-900);
+Primary Button .btn--style-primary {
+  background-color: var(--theme-elevation-900);
 }
 
 /* Input Field */
