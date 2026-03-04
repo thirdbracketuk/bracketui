@@ -5,7 +5,6 @@ import { Geist } from "next/font/google";
 import { ThemeScript } from "bracketui";
 import Header from "../components/Header";
 import AppFooter from "../components/Footer";
-import FadeUpObserver from "../components/FadeUpObserver";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -27,7 +26,6 @@ export default function RootLayout({
       </head>
       <body className={`${geist.className} bg-background text-foreground`}>
         {/* <RootGradient variant="radial" intensity="subtle" /> */}
-        <FadeUpObserver />
         <Header />
         {children}
         <AppFooter />

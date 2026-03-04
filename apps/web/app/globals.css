@@ -1,3 +1,199 @@
 @import "tailwindcss";
 @import "@bracketui/tailwind-config";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ── Rose Accent Tokens ──────────────────────────────────────── */
+:root {
+  --accent-50:  #fcf3f6;
+  --accent-100: #f9eaf0;
+  --accent-200: #f5d5e1;
+  --accent-300: #eeb3c8;
+  --accent-400: #e383a3;
+  --accent-500: #d75d82;
+  --accent-600: #bc3a5b;
+  --accent-700: #a82e4a;
+  --glow-rgb:   188, 58, 91;
+
+  /* Surface scale — light */
+  --s-section: #fafafa;
+  --s-card:    #ffffff;
+  --s-card-2:  #f4f4f5;
+
+  /* Text — light */
+  --t-head: #09090b;
+  --t-body: #71717a;
+  --t-mute: #a1a1aa;
+
+  /* Border — light */
+  --bd-color: #e4e4e7;
+}
+
+[data-theme="dark"] {
+  --glow-rgb:  215, 93, 130;
+  --s-section: #111111;
+  --s-card:    #161616;
+  --s-card-2:  #1e1e1e;
+  --t-head:    #f0f0f0;
+  --t-body:    #a0a0a0;
+  --t-mute:    #606060;
+  --bd-color:  rgba(255, 255, 255, 0.07);
+}
+
+/* Expose accent + surface tokens to Tailwind */
+@theme inline {
+  --color-accent-600: var(--accent-600);
+  --color-accent-500: var(--accent-500);
+  --color-accent-400: var(--accent-400);
+  --color-accent-300: var(--accent-300);
+  --color-accent-200: var(--accent-200);
+  --color-accent-100: var(--accent-100);
+  --color-accent-50:  var(--accent-50);
+  --color-s-section:  var(--s-section);
+  --color-s-card:     var(--s-card);
+  --color-s-card-2:   var(--s-card-2);
+  --color-t-head:     var(--t-head);
+  --color-t-body:     var(--t-body);
+  --color-t-mute:     var(--t-mute);
+  --color-bd:         var(--bd-color);
+}
+
+/* ── Accent underglow behind header ─────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 320px;
+  z-index: 49;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 0%,
+    rgba(var(--glow-rgb), .11) 0%,
+    rgba(var(--glow-rgb), .04) 40%,
+    transparent 75%
+  );
+}
+[data-theme="dark"] body::before {
+  height: 380px;
+  background: radial-gradient(
+    ellipse 65% 100% at 50% 0%,
+    rgba(var(--glow-rgb), .14) 0%,
+    rgba(var(--glow-rgb), .05) 45%,
+    transparent 75%
+  );
+}
+
+/* ── Navbar accent glow ──────────────────────────────────────── */
+.nav-glow {
+  box-shadow:
+    0 1px 0 0    rgba(var(--glow-rgb), .18),
+    0 1px 40px 0 rgba(var(--glow-rgb), .10),
+    0 4px 80px 0 rgba(var(--glow-rgb), .06) !important;
+}
+[data-theme="dark"] .nav-glow {
+  box-shadow:
+    0 1px 0 0     rgba(var(--glow-rgb), .22),
+    0 1px 50px 0  rgba(var(--glow-rgb), .12),
+    0 4px 100px 0 rgba(var(--glow-rgb), .07) !important;
+}
+
+/* ── Eyebrow label ───────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-600);
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--accent-500);
+  flex-shrink: 0;
+}
+[data-theme="dark"] .eyebrow { color: var(--accent-400); }
+
+/* ── Fade-up scroll animation ────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Horizontal scroll track ─────────────────────────────────── */
+.hscroll-track {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 48px;
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 85%, transparent 100%);
+  mask-image:         linear-gradient(to right, black 0%, black 85%, transparent 100%);
+}
+.hscroll-track::-webkit-scrollbar { display: none; }
+
+.hscroll-inner {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding: 4px 24px 0;
+}
+@media (min-width: 1280px) {
+  .hscroll-inner { padding-left: calc((100vw - 1280px) / 2 + 24px); }
+}
+
+/* ── Badge pulse ─────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(.85); }
+}
+.badge-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* ── Accent card shadow ──────────────────────────────────────── */
+.accent-hover:hover {
+  box-shadow:
+    0 0 0 1px rgba(var(--glow-rgb), .12),
+    0 8px 32px -4px rgba(var(--glow-rgb), .22) !important;
+}
+.accent-shadow {
+  box-shadow:
+    0 0 0 1px rgba(var(--glow-rgb), .12),
+    0 8px 32px -4px rgba(var(--glow-rgb), .20);
+}
+
+/* ── CTA card gradient ───────────────────────────────────────── */
+.cta-card-bg {
+  background:
+    radial-gradient(ellipse 90% 80% at 15% 10%, var(--accent-100) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 70% at 90% 90%, var(--accent-50)  0%, transparent 60%),
+    var(--s-card);
+  border: 1px solid var(--accent-200);
+}
+[data-theme="dark"] .cta-card-bg {
+  background:
+    radial-gradient(ellipse 80% 70% at 10% 20%, rgba(var(--glow-rgb), .18) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 85% 85%, rgba(var(--glow-rgb), .10) 0%, transparent 55%),
+    var(--s-card);
+  border: 1px solid rgba(var(--glow-rgb), .25);
+}
+
+/* ── Scroll arrow buttons ────────────────────────────────────── */
+.scroll-arrow {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--bd-color);
+  background: var(--s-card);
+  color: var(--t-body);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .15s, color .15s, opacity .15s;
+  flex-shrink: 0;
+}
+.scroll-arrow:hover { background: var(--s-card-2); color: var(--t-head); }
+.scroll-arrow:disabled { opacity: .3; cursor: default; }
